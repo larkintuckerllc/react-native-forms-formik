@@ -1,6 +1,6 @@
 import { Field, Formik } from 'formik';
 import React from 'react';
-import { Button, TextInput, View } from 'react-native';
+import { Button, View } from 'react-native';
 import FKTextInput from '../FKTextInput';
 
 const RefactorForm = () => (
