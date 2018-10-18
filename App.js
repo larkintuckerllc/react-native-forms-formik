@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, StyleSheet, View } from 'react-native';
 import HelloForm from './components/HelloForm';
 import RefactorForm from './components/RefactorForm';
+import Refactor2Form from './components/Refactor2Form';
 import SimpleForm from './components/SimpleForm';
 import ValidationForm from './components/ValidationForm';
 
@@ -18,10 +19,12 @@ export default class App extends React.Component {
           <Button title="Simple Form" onPress={this.handlePressSimple} />
           <Button title="RefactorForm" onPress={this.handlePressRefactor} />
           <Button title="ValidationForm" onPress={this.handlePressValidation} />
+          <Button title="Refactor2Form" onPress={this.handlePressRefactor2} />
           {activeForm === 'hello' && <HelloForm />}
           {activeForm === 'simple' && <SimpleForm />}
           {activeForm === 'refactor' && <RefactorForm />}
           {activeForm === 'validation' && <ValidationForm />}
+          {activeForm === 'refactor2' && <Refactor2Form />}
       </View>
     );
   }
@@ -29,6 +32,8 @@ export default class App extends React.Component {
   handlePressHello = () => this.setState({ activeForm: 'hello' });
 
   handlePressRefactor = () => this.setState({ activeForm: 'refactor' });
+
+  handlePressRefactor2 = () => this.setState({ activeForm: 'refactor2' });
 
   handlePressSimple = () => this.setState({ activeForm: 'simple' });
 
