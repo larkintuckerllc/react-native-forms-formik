@@ -1,7 +1,7 @@
-import { Formik } from 'formik';
+import { Field, Formik } from 'formik';
 import React from 'react';
 import { Button, TextInput, View } from 'react-native';
-import styles from './styles';
+import FKTextInput from '../FKTextInput';
 
 const RefactorForm = () => (
   <Formik
@@ -10,23 +10,19 @@ const RefactorForm = () => (
       console.log(`lastName: ${lastName}`);
     }}
     render={({
-      handleChange,
       handleSubmit,
-      values: { firstName, lastName }
     }) => (
       <View>
-        <TextInput
-          onChangeText={handleChange('firstName')}
-          style={styles.rootInput}
-          value={firstName}
+        <Field
+          component={FKTextInput}
+          name="firstName" 
         />
-        <TextInput
-          onChangeText={handleChange('lastName')}
-          style={styles.rootInput}
-          value={lastName}
+        <Field
+          component={FKTextInput}
+          name="lastName" 
         />
         <Button
-          title="Submit Simple"
+          title="Submit Refactor"
           onPress={handleSubmit}
         />
       </View>
