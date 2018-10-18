@@ -4,6 +4,7 @@ import { Text, TextInput, View } from 'react-native';
 import styles from './styles';
 
 const FKTextInput = ({
+  disabled,
   field: {
     name,
     onBlur,
@@ -19,9 +20,12 @@ const FKTextInput = ({
     <TextInput
       onChangeText={onChange(name)}
       onBlur={onBlur(name)}
+      editable={!disabled}
+      selectTextOnFocus={!disabled}
       style={[
         styles.rootInput,
         {
+          color: disabled ? 'gray' : 'black',
           borderColor: errors[name] && touched[name] ? 'red' : 'gray'
         },
       ]}
@@ -32,6 +36,7 @@ const FKTextInput = ({
 );
 
 FKTextInput.propTypes = {
+  disabled: PropTypes.bool,
   field: PropTypes.shape({
     name: PropTypes.string.isRequired,
     onBlur: PropTypes.func.isRequired,
@@ -42,6 +47,10 @@ FKTextInput.propTypes = {
     errors: PropTypes.object.isRequired,
     touched: PropTypes.object.isRequired,
   }).isRequired,
+};
+
+FKTextInput.defaultProps = {
+  disabled: false,
 };
 
 export default FKTextInput;
