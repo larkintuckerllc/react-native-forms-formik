@@ -19,7 +19,7 @@ const Refactor2FormView = ({
     />
     <Button
       disabled={!isValid}
-      title="Submit Validation"
+      title="Submit Refactor2"
       onPress={handleSubmit}
     />
   </View>

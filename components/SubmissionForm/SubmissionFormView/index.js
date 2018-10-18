@@ -26,7 +26,7 @@ const SubmissionFormView = ({
     {status.failed && <Text style={styles.rootFailed}>FAILED</Text>}
     <Button
       disabled={!isValid || isSubmitting}
-      title="Submit Validation"
+      title="Submit Submission"
       onPress={handleSubmit}
     />
   </View>
