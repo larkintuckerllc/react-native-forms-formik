@@ -6,6 +6,9 @@ const styles = StyleSheet.create({
     height: 40,
     padding: 10,
   },
+  rootError: {
+    color: 'red',
+  },
 });
 
 export default styles;
