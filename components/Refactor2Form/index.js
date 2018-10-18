@@ -1,7 +1,6 @@
-import { Field, Formik } from 'formik';
+import { Formik } from 'formik';
 import React from 'react';
-import { Button, View } from 'react-native';
-import FKTextInput from '../FKTextInput';
+import Refactor2FormView from './Refactor2FormView';
 
 const validate = ({ firstName, lastName }) => {
   const errors = {};
@@ -25,26 +24,7 @@ const Refactor2Form = () => (
       console.log(`lastName: ${lastName}`);
     }}
     validate={validate}
-    render={({
-      handleSubmit,
-      isValid,
-    }) => (
-      <View>
-        <Field
-          component={FKTextInput}
-          name="firstName" 
-        />
-        <Field
-          component={FKTextInput}
-          name="lastName" 
-        />
-        <Button
-          disabled={!isValid}
-          title="Submit Validation"
-          onPress={handleSubmit}
-        />
-      </View>
-    )}
+    component={Refactor2FormView}
   />
 );
 
